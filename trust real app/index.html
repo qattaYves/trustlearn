@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustLearn - Micro-Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+<aside class="left-sidebar">
+            <div class="brand-logo">
+                <div class="logo-icon">TL</div>
+                <h2>TrustLearn</h2>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" id="menu-foryou" class="nav-item active">🌐 For You</a>
+                <a href="#" id="menu-explore" class="nav-item">🔍 Explore</a>
+                <a href="#" id="menu-qa" class="nav-item">💬 Q&A Community</a>
+                <a href="#" id="menu-projects" class="nav-item">🛠️ Projects</a>
+                <a href="#" id="menu-articles" class="nav-item">📄 Articles</a>
+                <a href="#" id="menu-profile" class="nav-item">👤 Profile</a>
+                
+                <button id="sidebar-auth-btn" style="margin-top: 8px; background: rgba(6, 182, 212, 0.1); border: 1px dashed #06b6d4; color: #06b6d4; padding: 12px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; text-align: left; display: flex; align-items: center; gap: 12px; cursor: pointer; width: 100%; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(6, 182, 212, 0.2)'; this.style.color='#22d3ee';" onmouseout="this.style.background='rgba(6, 182, 212, 0.1)'; this.style.color='#06b6d4';">
+                    🔑 Login / Sign Up
+                </button>
+
+             <div class="upload-menu-container" style="position: relative; width: 100%;">
+                    
+                    <a href="#" id="sidebar-upload-trigger" class="nav-item upload-btn" style="margin-top: 16px; background-color: #06b6d4; color: #0b0f19; font-weight: bold; justify-content: center; cursor: pointer;">
+                        ➕ Upload Content
+                    </a>
+
+                    <div id="upload-options-dropdown" style="display: none; position: absolute; bottom: 50px; left: 0; width: 100%; background: #0d1321; border: 1px solid #1e293b; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 50; flex-direction: column; overflow: hidden;">
+                        
+                        <button id="upload-opt-article" style="width: 100%; background: transparent; border: none; border-bottom: 1px solid #1e293b; color: #cbd5e1; padding: 12px 16px; font-size: 14px; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.2s;" onmouseover="this.style.background='#1e293b'; this.style.color='#06b6d4';" onmouseout="this.style.background='transparent'; this.style.color='#cbd5e1';">
+                            📄 Write Article
+                        </button>
+                        
+                        <button id="upload-opt-media" style="width: 100%; background: transparent; border: none; color: #cbd5e1; padding: 12px 16px; font-size: 14px; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.2s;" onmouseover="this.style.background='#1e293b'; this.style.color='#06b6d4';" onmouseout="this.style.background='transparent'; this.style.color='#cbd5e1';">
+                            🎥 Video / Photo
+                        </button>
+
+                    </div>
+
+                </div>
+                
+            </nav>
+        </aside>
+
+        <main class="main-content-feed">
+            
+            <div id="view-foryou" class="app-view">
+                
+                <div class="feed-scroll-container">
+                    
+                    <article class="video-card">
+                        <div class="video-wrapper">
+                            <video class="feed-video" loop muted autoplay playsinline>
+                                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            </video>
+
+                            <div class="video-details-hud">
+                                <h4 class="creator-handle">@ElectroMind</h4>
+                                <h3 class="concept-title">What is a Transistor? <small>Explained in 30s</small></h3>
+                                <p class="concept-description">A semiconductor component engineered to gate, switch, or amplify electrical signals across embedded circuits.</p>
+                                <div class="video-tags">
+                                    <span>#electronics</span> <span>#transistor</span> <span>#basics</span>
+                                </div>
+                            </div>
+                            
+                            <div class="engagement-hud">
+                                <button class="hud-action like-btn" data-liked="false">❤️ <small class="like-count">12.5K</small></button>
+                                <button class="hud-action comment-trigger-btn">💬 <small>2</small></button>
+                                <button class="hud-action save-btn">🔖 <small>3.2K</small></button>
+                                <button class="hud-action share-btn">🔗 <small>1.1K</small></button>
+                            </div>
+
+                            <div class="comment-section" style="display: none; position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(13, 19, 33, 0.95); border-top: 1px solid #1e293b; padding: 15px; z-index: 20; max-height: 50%;">
+                                <div class="comments-list" style="overflow-y: auto; max-height: 120px; font-size: 13px; color: #cbd5e1; margin-bottom: 10px;">
+                                    <p style="margin-bottom: 6px;"><b>@alpha_dev:</b> Great explanation! Short and simple.</p>
+                                    <p style="margin-bottom: 6px;"><b>@circuit_queen:</b> Finally understood how it gates electrons!</p>
+                                </div>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" class="comment-input" placeholder="Add a comment..." style="flex: 1; background: #090d16; border: 1px solid #1e293b; color: white; padding: 8px; border-radius: 6px; font-size: 13px;">
+                                    <button class="post-comment-btn" style="background: #06b6d4; color: #0b0f19; border: none; padding: 0 12px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px;">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-wrapper">
+                            <video class="feed-video" loop muted playsinline>
+                                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+                            </video>
+
+                            <div class="video-details-hud">
+                                <h4 class="creator-handle">@AI_Innovator</h4>
+                                <h3 class="concept-title">Neural Networks <small>Explained in 30s</small></h3>
+                                <p class="concept-description">How mathematical nodes layers simulate basic animal brain connections to learn features.</p>
+                                <div class="video-tags">
+                                    <span>#ai</span> <span>#networks</span> <span>#deeplearning</span>
+                                </div>
+                            </div>
+
+                            <div class="engagement-hud">
+                                <button class="hud-action like-btn" data-liked="false">❤️ <small class="like-count">8.9K</small></button>
+                                <button class="hud-action comment-trigger-btn">💬 <small>1</small></button>
+                                <button class="hud-action save-btn">🔖 <small>1.9K</small></button>
+                                <button class="hud-action share-btn">🔗 <small>520</small></button>
+                            </div>
+
+                            <div class="comment-section" style="display: none; position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(13, 19, 33, 0.95); border-top: 1px solid #1e293b; padding: 15px; z-index: 20; max-height: 50%;">
+                                <div class="comments-list" style="overflow-y: auto; max-height: 120px; font-size: 13px; color: #cbd5e1; margin-bottom: 10px;">
+                                    <p style="margin-bottom: 6px;"><b>@ai_pioneer:</b> Is this using neural network weights?</p>
+                                </div>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" class="comment-input" placeholder="Add a comment..." style="flex: 1; background: #090d16; border: 1px solid #1e293b; color: white; padding: 8px; border-radius: 6px; font-size: 13px;">
+                                    <button class="post-comment-btn" style="background: #06b6d4; color: #0b0f19; border: none; padding: 0 12px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px;">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+<section class="right-context-panel">
+    <div class="panel-inner-scroll">
+        
+        <div id="context-electronics" class="topic-context-block">
+            <div class="concept-header">
+                <span class="topic-pill">Electronics</span>
+                <h1>What is a Transistor?</h1>
+                <h3 style="font-size: 16px; color: #94a3b8; font-weight: normal; margin-top: 4px;">Explained in 30 seconds</h3>
+            </div>
+            <hr style="border: none; border-top: 1px solid #1e293b; margin: 20px 0;">
+            <div class="explanation-box">
+                <p style="font-size: 15px; color: #cbd5e1; line-height: 1.6;">A transistor is a semiconductor component engineered to gate, switch, or amplify low-voltage electrical signals across embedded circuits.</p>
+            </div>
+        </div>
+
+        <div id="context-ai" class="topic-context-block" style="display: none;">
+            <div class="concept-header">
+                <span class="topic-pill" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;">Artificial Intelligence</span>
+                <h1>Neural Networks</h1>
+                <h3 style="font-size: 16px; color: #94a3b8; font-weight: normal; margin-top: 4px;">Explained in 30 seconds</h3>
+            </div>
+            <hr style="border: none; border-top: 1px solid #1e293b; margin: 20px 0;">
+            <div class="explanation-box">
+                <p style="font-size: 15px; color: #cbd5e1; line-height: 1.6;">A neural network is an AI computing model that processes data using interconnected node layers that simulate mathematical neuron weights.</p>
+            </div>
+        </div>
+        
+        <div class="interactive-qna" style="margin-top: 30px;">
+            <h4 style="color: #64748b; font-size: 12px; text-transform: uppercase; margin-bottom: 12px;">Ask a Question</h4>
+            <div class="input-row" style="display: flex; gap: 8px; margin-bottom: 15px;">
+                <input type="text" id="qa-input" placeholder="Ask anything about this topic..." style="flex: 1; background: #090d16; border: 1px solid #1e293b; color: white; padding: 12px; border-radius: 6px; font-size: 13px;">
+                <button class="submit-query-btn" id="qa-post-btn" style="background: #1e293b; border: 1px solid #06b6d4; color: #06b6d4; padding: 0 16px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 13px;">Post</button>
+            </div>
+            <div id="qa-submissions-list" style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="background: #1e293b; padding: 12px; border-radius: 6px; font-size: 14px; border-left: 3px solid #06b6d4;">
+                    <p style="color: #06b6d4; font-weight: 600; margin-bottom: 4px;">@circuit_learner asks:</p>
+                    <p style="color: #cbd5e1;">How does a transistor compare to a standard relay switch?</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+            </div>
+
+            <div id="view-explore" class="app-view text-dashboard-view" style="display: none;">
+                <h2>Explore Core Technologies</h2>
+                <p style="color: #94a3b8; margin-bottom: 30px;">Select a track to personalize your micro-learning feed parameters.</p>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; width: 100%; max-width: 600px;">
+                    <div style="background: #0d1321; border: 1px solid #1e293b; padding: 20px; border-radius: 12px;">🤖 AI & Deep Learning</div>
+                    <div style="background: #0d1321; border: 1px solid #1e293b; padding: 20px; border-radius: 12px;">⚡ Mechatronics Technology</div>
+                    <div style="background: #0d1321; border: 1px solid #1e293b; padding: 20px; border-radius: 12px;">💻 Embedded Systems</div>
+                    <div style="background: #0d1321; border: 1px solid #1e293b; padding: 20px; border-radius: 12px;">📡 IoT Network Telemetry</div>
+                </div>
+            </div>
+
+<div id="view-qa" class="app-view split-layout-view" style="display: none;">
+                
+                <div class="dashboard-scroll-column">
+                    <h2>Q&A Engineering Board</h2>
+                    <p style="color: #94a3b8; margin-bottom: 24px; font-size: 14px;">Review pending technical blockages flagged by developers globally.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 16px; width: 100%;">
+                        <div style="background: #0d1321; border: 1px solid #1e293b; padding: 18px; border-radius: 8px;">
+                            <span style="color: #eab308; font-size: 11px; font-weight: bold; background: rgba(234,179,8,0.1); padding: 2px 6px; border-radius: 4px;">Unresolved</span>
+                            <h4 style="color: #fff; margin: 8px 0 4px 0;">ESP32 Deep Sleep Wakeup Issue</h4>
+                            <p style="color: #cbd5e1; font-size: 13px;">My hardware is failing to trigger timer interruptions safely from low-power modes...</p>
+                        </div>
+                        <div style="background: #0d1321; border: 1px solid #1e293b; padding: 18px; border-radius: 8px;">
+                            <span style="color: #22c55e; font-size: 11px; font-weight: bold; background: rgba(34,197,94,0.1); padding: 2px 6px; border-radius: 4px;">Solved ✅</span>
+                            <h4 style="color: #fff; margin: 8px 0 4px 0;">Calibrating TinyML Model Layer Overflows</h4>
+                            <p style="color: #cbd5e1; font-size: 13px;">Fixed quantization settings to load network weights inside SRAM boundaries smoothly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="right-context-panel">
+                    <div class="panel-inner-scroll">
+                        <div class="concept-header">
+                            <span class="topic-pill" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;">Community Metrics</span>
+                            <h1 style="font-size: 26px; color: white; margin-top: 8px;">Global Forum</h1>
+                            <h3 style="font-size: 16px; color: #94a3b8; font-weight: normal; margin-top: 4px;">Interact with tech experts</h3>
+                        </div>
+                        <hr style="border: none; border-top: 1px solid #1e293b; margin: 20px 0;">
+                        <div class="explanation-box" style="background: #090d16; padding: 15px; border-radius: 8px; border: 1px solid #1e293b;">
+                            <p style="font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 8px;"><b>Forum Guidelines:</b></p>
+                            <p style="font-size: 13px; color: #94a3b8; line-height: 1.5;">Provide full microcontroller wiring diagrams and precise error logs when posting open engineering blockages.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+<div id="view-projects" class="app-view split-layout-view" style="display: none;">
+                
+                <div class="dashboard-scroll-column">
+                    <h2>Hardware Project Repository</h2>
+                    <p style="color: #94a3b8; margin-bottom: 24px; font-size: 14px;">Deploy validated hardware source codes and layouts immediately.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+                        <div style="background: #0d1321; display: flex; justify-content: space-between; align-items: center; padding: 16px; border-radius: 8px; border: 1px solid #1e293b;">
+                            <div>
+                                <h4 style="color: #fff; margin-bottom: 4px;">Akarima Vertical Farming Controller</h4>
+                                <p style="color: #64748b; font-size: 12px;">Automated soil telemetry and moisture logic source.</p>
+                            </div>
+                            <span style="color: #06b6d4; font-weight: bold; font-size: 14px;">$25</span>
+                        </div>
+                        
+                        <div style="background: #0d1321; display: flex; justify-content: space-between; align-items: center; padding: 16px; border-radius: 8px; border: 1px solid #1e293b;">
+                            <div>
+                                <h4 style="color: #fff; margin-bottom: 4px;">Voice-Controlled Offline Switch Matrix</h4>
+                                <p style="color: #64748b; font-size: 12px;">Full wiring diagrams and local speech recognition parameters.</p>
+                            </div>
+                            <span style="color: #06b6d4; font-weight: bold; font-size: 14px;">$15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="right-context-panel">
+                    <div class="panel-inner-scroll">
+                        <div class="concept-header">
+                            <span class="topic-pill" style="background: rgba(34, 197, 94, 0.1); color: #22c55e;">Secure Checkout</span>
+                            <h1 style="font-size: 26px; color: white; margin-top: 8px;">Order Details</h1>
+                            <h3 style="font-size: 16px; color: #94a3b8; font-weight: normal; margin-top: 4px;">Premium Mechatronics Code</h3>
+                        </div>
+                        <hr style="border: none; border-top: 1px solid #1e293b; margin: 20px 0;">
+                        
+                        <div class="explanation-box" style="background: #090d16; padding: 15px; border-radius: 8px; border: 1px solid #1e293b; display: flex; flex-direction: column; gap: 10px;">
+                            <p style="font-size: 13px; color: #cbd5e1;"><b style="color: #06b6d4;">✓</b> Verified compilation on hardware prototypes.</p>
+                            <p style="font-size: 13px; color: #cbd5e1;"><b style="color: #06b6d4;">✓</b> Full circuit schematic layouts included (.BRD/.SCH).</p>
+                            <p style="font-size: 13px; color: #cbd5e1;"><b style="color: #06b6d4;">✓</b> Lifetime firmware dependency updates.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+<<div id="view-articles" class="app-view split-layout-view" style="display: none;">
+                
+                <div id="articles-library-feed" style="display: flex; width: 100%; height: 100%;">
+                    <div class="dashboard-scroll-column">
+                        <h2>Engineering Knowledge Base</h2>
+                        <p style="color: #94a3b8; margin-bottom: 24px; font-size: 14px;">Deep-dive technical documentation designed for rapid knowledge transfers.</p>
+                        
+                        <div style="background: #0d1321; border: 1px solid #1e293b; padding: 24px; border-radius: 12px; width: 100%; max-width: 500px;">
+                            <span style="color: #3b82f6; font-size: 12px; font-weight: bold; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">Read Time: 8 Min</span>
+                            <h3 style="color: #fff; margin: 12px 0 10px 0; font-size: 18px; font-weight: 700;">Optimizing Embedded Edge Devices for TinyML Deployments</h3>
+                            <p style="color: #cbd5e1; font-size: 13px; line-height: 1.6; margin-bottom: 16px;">Deploying continuous inference engines on microcontrollers demands hyper-aggressive static memory management strategy layouts...</p>
+                            <a href="#" style="color: #06b6d4; font-size: 13px; text-decoration: none; font-weight: bold; display: inline-block;">Open Document →</a>
+                        </div>
+                    </div>
+
+                    <section class="right-context-panel">
+                        <div class="panel-inner-scroll">
+                            <div class="concept-header">
+                                <span class="topic-pill" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">Documentation</span>
+                                <h1 style="font-size: 26px; color: white; margin-top: 8px;">Library Metrics</h1>
+                                <h3 style="font-size: 16px; color: #94a3b8; font-weight: normal; margin-top: 4px;">Peer-Reviewed Papers</h3>
+                            </div>
+                            <hr style="border: none; border-top: 1px solid #1e293b; margin: 20px 0;">
+                            <div class="explanation-box" style="background: #090d16; padding: 15px; border-radius: 8px; border: 1px solid #1e293b;">
+                                <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 6px;"><b style="color: #3b82f6;">Contributor:</b> @TinyML_Core</p>
+                                <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 6px;"><b style="color: #3b82f6;">Category:</b> Embedded Software</p>
+                                <p style="font-size: 13px; color: #cbd5e1;"><b style="color: #3b82f6;">Published:</b> May 2026</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div id="article-composer-view" style="display: none; width: 100%; height: 100%; background: #020617;">
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; padding: 30px; border-right: 1px solid #1e293b; height: 100%;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <h2 style="color: #06b6d4; font-size: 20px; margin: 0;">Markdown Editor</h2>
+                            <button id="close-composer-btn" style="background: #1e293b; color: #94a3b8; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600;">✕ Cancel</button>
+                        </div>
+                        <input type="text" id="composer-title-input" placeholder="Enter article title..." style="background: #0d1321; border: 1px solid #1e293b; color: white; padding: 12px; border-radius: 6px; font-size: 16px; font-weight: bold; margin-bottom: 12px; width: 100%;">
+                        <textarea id="markdown-textarea" placeholder="# Type your title here&#10;&#10;Use standard markdown configurations to code your text block variables...&#10;&#10;## Subheading&#10;* **Bold bullet points** for tech specs..." style="flex: 1; background: #090d16; border: 1px solid #1e293b; color: #cbd5e1; padding: 20px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 14px; line-height: 1.6; resize: none; outline: none; width: 100%;"></textarea>
+                        <button id="publish-article-btn" style="background: #06b6d4; color: #0b0f19; border: none; padding: 14px; border-radius: 6px; font-weight: bold; margin-top: 12px; cursor: pointer; font-size: 14px; width: 100%;">Publish Article</button>
+                    </div>
+
+                    <div style="width: 420px; min-width: 420px; display: flex; flex-direction: column; padding: 30px; background: #0d1321; height: 100%; overflow-y: auto;">
+                        <h4 style="color: #64748b; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Live Preview Render</h4>
+                        <div id="preview-render-pane" style="color: #cbd5e1; font-size: 14px; line-height: 1.6;">
+                            <h1 style="color: #fff; font-size: 22px; margin-bottom: 10px;">Document Preview Title</h1>
+                            <p style="color: #64748b; font-style: italic;">Live translation stream will compile text strings instantly here...</p>
+                        </div>
+                    </div>
+
+                </div>
+ <div id="media-studio-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(2, 6, 23, 0.9); backdrop-filter: blur(10px); z-index: 110; justify-content: center; align-items: center;">
+            <div style="background: #0d1321; border: 1px solid #1e293b; width: 100%; max-width: 460px; padding: 32px; border-radius: 16px; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);">
+                
+                <button id="close-studio-btn" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: #64748b; font-size: 20px; cursor: pointer; transition: 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#64748b'">✕</button>
+                
+                <div style="margin-bottom: 24px;">
+                    <h2 style="color: #06b6d4; font-size: 22px; font-weight: 700; margin-bottom: 4px;">Creator Studio</h2>
+                    <p style="color: #94a3b8; font-size: 13px;">Publish vertical micro-learning concepts to the global feed corridor</p>
+                </div>
+
+                <form id="studio-upload-form" style="display: flex; flex-direction: column; gap: 16px;">
+                    
+                    <div style="border: 2px dashed #1e293b; background: #090d16; padding: 24px; border-radius: 8px; text-align: center; cursor: pointer; transition: 0.2s;" onmouseover="this.style.borderColor='#06b6d4'" onmouseout="this.style.borderColor='#1e293b'">
+                        <div style="font-size: 32px; margin-bottom: 8px;">🎬</div>
+                        <p style="color: #cbd5e1; font-size: 13px; font-weight: 600; margin-bottom: 4px;">Select Technical Micro-Clip</p>
+                        <p style="color: #64748b; font-size: 11px;">Supports vertical video formats up to 30s (.MP4, .MOV)</p>
+                        <input type="file" id="studio-file-hidden" accept="video/*,image/*" style="display: none;">
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="color: #94a3b8; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Concept Title</label>
+                        <input type="text" id="studio-title-input" required placeholder="e.g., How Bridge Rectifiers Work" style="background: #090d16; border: 1px solid #1e293b; color: white; padding: 12px; border-radius: 6px; font-size: 14px; outline: none;">
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="color: #94a3b8; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Micro Description</label>
+                        <textarea id="studio-desc-input" required rows="2" placeholder="Provide a concise 1-2 sentence engineering layout summary..." style="background: #090d16; border: 1px solid #1e293b; color: white; padding: 12px; border-radius: 6px; font-size: 13px; resize: none; outline: none; line-height: 1.5;"></textarea>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="color: #94a3b8; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Hashtag Categories</label>
+                        <input type="text" id="studio-tags-input" placeholder="e.g., #mechatronics #circuits #basics" style="background: #090d16; border: 1px solid #1e293b; color: #3b82f6; font-weight: 600; padding: 12px; border-radius: 6px; font-size: 14px; outline: none;">
+                    </div>
+
+                    <button type="submit" style="background: #06b6d4; color: #0b0f19; border: none; padding: 14px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 10px; font-size: 14px; transition: 0.2s;" onmouseover="this.style.background='#22d3ee'" onmouseout="this.style.background='#06b6d4'">
+                        Render & Broadcast Clip
+                    </button>
+                </form>
+
+            </div>
+        </div>               
+
+            </div>
+
+<!-- ========================================================= -->
+            <!-- VIEW 6: USER ADVANCEMENT PROFILE (UPGRADED)               -->
+            <!-- ========================================================= -->
+            <div id="view-profile" class="app-view text-dashboard-view" style="display: none; align-items: center; justify-content: center; padding: 40px;">
+                
+                <div class="profile-card-container">
+                    
+                    <!-- Top Header: Profile Picture & Core Names -->
+                    <div class="profile-header-block">
+                        <div class="profile-avatar">
+                            <!-- Clean SVG Avatar Icon Layer -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="profile-identity">
+                            <h2 class="profile-display-name">Tech Creator</h2>
+                            <p class="profile-username">@trustime.ai</p>
+                        </div>
+                    </div>
+
+                    <!-- Middle Section: User Biography -->
+                    <div class="profile-bio-box">
+                        <p>Building digital brands and exploring the frontiers of tech innovation. Mechatronics student diving deep into AI, Robotics, and Embedded Systems (TinyML). Quality over quantity always.</p>
+                    </div>
+
+                    <!-- Bottom Grid: Performance Metrics Counters -->
+                    <div class="profile-stats-grid">
+                        <div class="stat-item-box">
+                            <h3>14</h3>
+                            <p>Concepts Met</p>
+                        </div>
+                        <div class="stat-item-box">
+                            <h3>92%</h3>
+                            <p>Quiz Accuracy</p>
+                        </div>
+                        <div class="stat-item-box">
+                            <h3>Kigali</h3>
+                            <p>Location</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+<div id="auth-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(8px); z-index: 100; justify-content: center; align-items: center;">
+            <div style="background: #0d1321; border: 1px solid #1e293b; width: 100%; max-width: 400px; padding: 32px; border-radius: 16px; position: relative;">
+                
+                <button id="close-auth-btn" style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: #64748b; font-size: 20px; cursor: pointer;">✕</button>
+                
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <h2 id="auth-title" style="color: #06b6d4; font-size: 24px; font-weight: 700; margin-bottom: 6px;">Welcome to TrustLearn</h2>
+                    <p id="auth-subtitle" style="color: #94a3b8; font-size: 14px;">Sign up to track your mechatronics milestones</p>
+                </div>
+
+<form id="auth-form" style="display: flex; flex-direction: column; gap: 16px;">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="color: #cbd5e1; font-size: 13px; font-weight: 600;">Email Address</label>
+                        <input type="email" id="auth-email" required placeholder="name@domain.com" style="background: #090d16; border: 1px solid #1e293b; color: white; padding: 12px; border-radius: 8px; font-size: 14px;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="color: #cbd5e1; font-size: 13px; font-weight: 600;">Password</label>
+                        <input type="password" id="auth-password" required placeholder="••••••••" style="background: #090d16; border: 1px solid #1e293b; color: white; padding: 12px; border-radius: 8px; font-size: 14px;">
+                    </div>
+
+                    <button type="submit" id="auth-submit-btn" style="background: #06b6d4; color: #0b0f19; border: none; padding: 14px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; font-size: 14px;">
+                        Create Account
+                    </button>
+
+                    <button type="button" id="auth-guest-btn" style="background: transparent; color: #94a3b8; border: 1px solid #1e293b; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 13px; transition: all 0.2s ease;" onmouseover="this.style.color='#fff'; this.style.borderColor='#64748b'" onmouseout="this.style.color='#94a3b8'; this.style.borderColor='#1e293b'">
+                        Skip and browse as guest
+                    </button>
+                </form>
+
+                <div style="text-align: center; margin-top: 20px; font-size: 13px;">
+                    <span id="auth-toggle-text" style="color: #64748b;">Already have an account?</span>
+                    <a href="#" id="auth-toggle-link" style="color: #06b6d4; text-decoration: none; font-weight: 600; margin-left: 4px;">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="supabase.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
